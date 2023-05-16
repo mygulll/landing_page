@@ -2,6 +2,7 @@ import PageDescription from "@/components/PageDescription"
 import {Grid, Button, Chip, Stack} from "@mui/material"
 import { useRouter } from "next/router";
 import ProjectItem from "@/components/ProjectItem";
+import ContactUs from "@/components/ContactUs";
 
 
 export default function Landing ({projects, skills}){
@@ -62,6 +63,7 @@ export default function Landing ({projects, skills}){
     <PageDescription
             title="Contact us"
         />
+    <ContactUs/>
     </section>
     );
 }
