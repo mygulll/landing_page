@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import ProjectItem from "@/components/ProjectItem";
 
 
-export default function Landing ({projects}){
+export default function Landing ({projects, skills}){
     const router = useRouter();
     return (
     <section>
@@ -23,15 +23,12 @@ export default function Landing ({projects}){
         />
         <Grid container spacing={6}>
             <Grid item md={4}>
-                        <h2>Get to know me!</h2>
-                        <p>Im blablabla</p>
-                        <Button 
-                        variant="contained" 
-                        size="large" 
-                        onClick={() => router.push("/contact")}
-                        >
-                            Projects
-                        </Button>
+                        <h2>Expertise</h2>
+                        <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
+                            {skills.map((skill) => (
+                                <Chip key={skill} label={skill} />
+                                ))}
+                        </Stack>
                     </Grid>
             <Grid item md={4}>
                 <h2>Get to know me!</h2>
@@ -88,9 +85,13 @@ export async function getServerSideProps(){
             "https://www.deere.com/assets/images/region-3/products/tractors/heavy-tractors/tractor-8270r-estudio.png",
         },
     ];
+    let skills = [];
+
+
     return{
         props: {
             projects,
+            skills: ["Java", "C", "Assembler", "SQL", "Robotics", ".NET", "PHP"],
         },
     };
 }
