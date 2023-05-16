@@ -3,6 +3,7 @@ import {Grid, Button, Chip, Stack} from "@mui/material"
 import { useRouter } from "next/router";
 import ProjectItem from "@/components/ProjectItem";
 import ContactUs from "@/components/ContactUs";
+import Maps from "@/components/Maps";
 
 
 export default function Landing ({projects, skills}){
@@ -18,7 +19,6 @@ export default function Landing ({projects, skills}){
                 <ProjectItem key={project._id} project={project} />
                 ))}
 
-
         <PageDescription
             title="Services"
         />
@@ -33,25 +33,25 @@ export default function Landing ({projects, skills}){
                     </Grid>
             <Grid item md={4}>
                 <h2>Get to know me!</h2>
-                <p>Im blablabla</p>
+                <p>Etiam ultricies nunc a turpis consequat ultrices.</p>
                 <Button 
                 variant="contained" 
                 size="large" 
                 onClick={() => router.push("/contact")}
                 >
-                    Projects
+                    Phasellus et gravida ex
                 </Button>
             </Grid>
 
             <Grid item md={4}>
-                <h2>Get to know me!</h2>
-                <p>Im blablabla</p>
+                <h2>Evolving!</h2>
+                <p>Vivamus ullamcorper turpis et tempus dictum.</p>
                 <Button 
                 variant="contained" 
                 size="large" 
                 onClick={() => router.push("/contact")}
                 >
-                    Projects
+                    New things
                 </Button>
             </Grid>
         </Grid>
@@ -59,6 +59,7 @@ export default function Landing ({projects, skills}){
         <PageDescription
             title="Maps"
         />
+        <Maps/>
 
     <PageDescription
             title="Contact us"
